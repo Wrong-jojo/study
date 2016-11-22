@@ -6,8 +6,10 @@ import java.io.*;
 import java.text.MessageFormat;
 
 /**
- * 测试对象的序列化和反序列
+ * 测试对象的序列化和反序列 转载自http://ych0108.iteye.com/blog/2252544
  * Created by gaozengrong on 16/11/22.
+ * 如果序列化Person之后,并且不显式定义Person的serialVersionUID,直接反序列化,会报错local class incompatible: stream classdesc serialVersionUID = -2569740845621051313, local class serialVersionUID = 7251461725026093025
+ * 原因:未指定serialVersionUID的情况下,编译器会随机生成一个serialVersionUID
  */
 public class ObjSerializeAndDeserialize {
     public static void main(String[] args) throws Exception {
