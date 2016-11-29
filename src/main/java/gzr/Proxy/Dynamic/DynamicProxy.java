@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * JDK动态代理代理类
+ * JDK动态代理代理类  具体可以参考,写的很好 [InvocationHandler中invoke()方法的调用问题](http://paddy-w.iteye.com/blog/841798)
  * Created by gaozengrong on 16/11/28.
  */
 public class DynamicProxy implements InvocationHandler{

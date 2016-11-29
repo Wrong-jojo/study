@@ -20,6 +20,7 @@ public class ProxyTest {
     public void testCountProxy(){
         DynamicProxy proxy = new DynamicProxy();
         Count count = (Count) proxy.bind(new CountImpl());
+        //这里可以看出count的Class类是$Proxy2,这个$Proxy2类继承了Proxy，实现了Count接口
         System.out.println(count.getClass().getName());
         count.queryCount();
 //        count.updateCount();
