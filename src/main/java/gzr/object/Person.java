@@ -9,6 +9,9 @@ import java.io.Serializable;
  */
 public class Person implements Serializable {
     private static final long serialVersionUID = -2569740845621051313L;
+
+    public static final String message = "I am a good person";
+
     private int age;
 
     private String name;
