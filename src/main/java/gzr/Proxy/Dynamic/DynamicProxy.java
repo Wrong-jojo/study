@@ -15,6 +15,11 @@ public class DynamicProxy implements InvocationHandler{
         this.target = target;
         //取得代理对象
         return Proxy.newProxyInstance(target.getClass().getClassLoader(),target.getClass().getInterfaces(),this);  //要绑定接口(这是一个缺陷，cglib弥补了这一缺陷)
+        /**
+         Proxy.newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h)做了以下几件事.
+        （1）根据参数loader和interfaces调用方法 getProxyClass(loader, interfaces)创建代理类$Proxy0.$Proxy0类 实现了interfaces的接口,并继承了Proxy类.
+        （2）实例化$Proxy0并在构造方法中把DynamicSubject传过去,接着$Proxy0调用父类Proxy的构造器,为h赋值,如下：
+         */
     }
     /**
      * 调用方法
