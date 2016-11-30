@@ -12,7 +12,7 @@ public class GBKToUTF8 {
     public static void main(String[] args) throws Exception {
 
         String gbkDirPath = "/Users/gaozengrong/gzr/study/src";//GBK编码格式源码文件路径
-        String utf8DirPath = "/Users/gaozengrong/gzr/study/src";//转为UTF-8编码格式源码文件保存路径
+        String utf8DirPath = "/Users/gaozengrong/copy/study/src";//转为UTF-8编码格式源码文件保存路径
 
         @SuppressWarnings("unchecked")
         Collection<File> gbkFileList =  FileUtils.listFiles(new File(gbkDirPath), new String[]{"java"}, true);//获取所有java文件
