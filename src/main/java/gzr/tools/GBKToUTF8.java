@@ -6,6 +6,7 @@ import java.io.File;
 import java.util.Collection;
 
 /**
+ * 如果需要更换整个工程的编码,调用此方法copy一份utf8编码的文件,然后将原有的文件夹直接替换成copy后的文件夹,因为git会保存编码信息,不能通过直接更改单个文件的编码来实现编码替换
  * Created by gaozengrong on 16/11/30.
  */
 public class GBKToUTF8 {
