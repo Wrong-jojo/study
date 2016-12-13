@@ -31,9 +31,15 @@ public class GsonHelper {
         map.put("full", gson.toJson(list));
         map.put("gzr","hahaha");
         String feature = gson.toJson(map);
-        Map resultMap = gson.fromJson(feature,new TypeToken<Map<String,Object>>(){}.getType());
-        System.out.println(resultMap);
-        List<Person> persons = gson.fromJson(resultMap.get("full").toString(), new TypeToken<List<Person>>(){}.getType());
+//        Map resultMap = gson.fromJson(feature,new TypeToken<Map<String,Object>>(){}.getType());
+//        System.out.println(resultMap);
+//        List<Person> persons = gson.fromJson(resultMap.get("full").toString(), new TypeToken<List<Person>>(){}.getType());
+        List<Person> persons = (List<Person>) getValueFromStringMap("full",feature);
         System.out.println(persons);
+    }
+
+    public static Object getValueFromStringMap(String key, String jsonStr){
+        Map map = gson.fromJson(jsonStr,new TypeToken<Map<String,Object>>(){}.getType());
+        return gson.fromJson(map.get(key).toString(),new TypeToken<Object>(){}.getType());
     }
 }
