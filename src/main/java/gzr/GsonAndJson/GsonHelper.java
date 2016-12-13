@@ -20,7 +20,7 @@ public class GsonHelper {
     }
 
     private static void ListToGson(){
-        Map<String,String> map = new HashMap<String, String>();
+        Map<String,Object> map = new HashMap<String, Object>();
         List<Person> list = new ArrayList<Person>();
         for (int i = 0; i < 3; i++) {
             Person temp = new Person();
@@ -31,7 +31,7 @@ public class GsonHelper {
         map.put("full", gson.toJson(list));
         map.put("gzr","hahaha");
         String feature = gson.toJson(map);
-        Map resultMap = gson.fromJson(feature,new TypeToken<Map<String,String>>(){}.getType());
+        Map resultMap = gson.fromJson(feature,new TypeToken<Map<String,Object>>(){}.getType());
         System.out.println(resultMap);
         List<Person> persons = gson.fromJson(resultMap.get("full").toString(), new TypeToken<List<Person>>(){}.getType());
         System.out.println(persons);
