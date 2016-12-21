@@ -1,4 +1,4 @@
-package gzr.Loader;
+package gzr.classLoader;
 
 /**
  * Created by gaozengrong on 16/12/19.
