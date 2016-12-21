@@ -1,13 +1,15 @@
 package gzr.tools;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Map;
 
 /**
  * 获取用户名等信息
  * Created by gaozengrong on 16/12/12.
  */
-public class getInfoPCInfo {
-    public static void main(String[] args) {
+public class getPCInfo {
+    public static void main(String[] args) throws UnknownHostException {
         Map< String,String> map = System.getenv();
         System.out.println(map);
 
@@ -18,5 +20,7 @@ public class getInfoPCInfo {
 
         /*mac*/
         System.out.println(map.get("USER"));
+
+        System.out.println(InetAddress.getLocalHost().getHostAddress()); //获取本机ip
     }
 }
