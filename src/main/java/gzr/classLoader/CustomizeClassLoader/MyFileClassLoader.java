@@ -7,9 +7,13 @@ import java.io.IOException;
 
 /**
  * 自己定制一个ClassLoader 需要实现ClassLoader的findClass()方法
+ * 参考自 http://hideto.iteye.com/blog/98178?page=2
  * Created by gaozengrong on 16/12/26.
  */
 public class MyFileClassLoader extends ClassLoader{
+    static {
+        System.out.println("execute MyFileClassLoader's static code");
+    }
 
     @Override
     public Class findClass(String name) {
