@@ -13,8 +13,15 @@ import java.util.List;
 public class SplitterAndJoiner {
     public static void main(String[] args) {
         List<String> list = new ArrayList<String>();
+        System.out.println();
+        long startTime = System.currentTimeMillis();
         StringToList();
+        long endTime = System.currentTimeMillis();
+        System.out.println("StringToList()函数运行时间： "+(endTime-startTime)+"ms");
+        startTime = System.currentTimeMillis();
         ListToString();
+        endTime = System.currentTimeMillis();
+        System.out.println("ListToString()函数运行时间： "+(endTime-startTime)+"ms");
     }
 
     private static void StringToList(){

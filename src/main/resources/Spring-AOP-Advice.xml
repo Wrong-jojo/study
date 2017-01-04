@@ -1,0 +1,28 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="customerService" class="gzr.aop.CustomerService">
+        <property name="name" value="gaozengrong" />
+        <property name="url" value="https://github.com/MikeWrong/study/tree/testCreatBranch" />
+    </bean>
+
+    <bean id="hijackBeforeMethod" class="gzr.aop.HijackBeforeMethod" />
+    <bean id="hijackAfterMethod" class="gzr.aop.HijackAfterMethod" />
+    <bean id="hijackThrowException" class="gzr.aop.HijackThrowException" />
+    <bean id="hijackAroundMethod" class="gzr.aop.HijackAroundMethod" />
+
+    <bean id="customerServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="customerService" />
+        <property name="interceptorNames">
+            <list>
+                <!--<value>hijackBeforeMethod</value>-->
+                <!--<value>hijackAfterMethod</value>-->
+                <!--<value>hijackThrowException</value>-->
+                <value>hijackAroundMethod</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>
