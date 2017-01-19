@@ -9,7 +9,8 @@ import java.util.Date;
  */
 public class SDF {
     public static void main(String[] args) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        System.out.println(sdf.format(new Date()));  //输出20161215
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHH");  //HH 24小时制
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhh"); //hh 12小时制
+        System.out.println(sdf.format(new Date()));  //输出2017011804
     }
 }
