@@ -20,6 +20,7 @@ public class GsonHelper {
     }
 
     private static void ListToGson(){
+        System.out.println((Integer)null);
         Map<String,Object> map = new HashMap<String, Object>();
         List<Person> list = new ArrayList<Person>();
         for (int i = 0; i < 3; i++) {
@@ -34,12 +35,18 @@ public class GsonHelper {
 //        Map resultMap = gson.fromJson(feature,new TypeToken<Map<String,Object>>(){}.getType());
 //        System.out.println(resultMap);
 //        List<Person> persons = gson.fromJson(resultMap.get("full").toString(), new TypeToken<List<Person>>(){}.getType());
-        List<Person> persons = (List<Person>) getValueFromStringMap("full",feature);
+        List<Person> persons = new ArrayList<Person>();
+        persons = (List<Person>) getValueFromStringMap("full",feature,Person.class);
         System.out.println(persons);
+        for (Person person:persons){
+            System.out.println(person.getAge());
+        }
     }
 
-    public static Object getValueFromStringMap(String key, String jsonStr){
+    public static <T> Object getValueFromStringMap(String key, String jsonStr, final Class<T> clazz){
         Map map = gson.fromJson(jsonStr,new TypeToken<Map<String,Object>>(){}.getType());
-        return gson.fromJson(map.get(key).toString(),new TypeToken<Object>(){}.getType());
+        List<T> temp = new ArrayList<T>();
+//        return gson.fromJson(map.get(key).toString(),new TypeToken<List<Person>>(){}.getType());
+        return gson.fromJson(map.get(key).toString(),new TypeToken<List<T>>(){}.getType());
     }
 }

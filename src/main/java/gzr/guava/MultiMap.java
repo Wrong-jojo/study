@@ -5,9 +5,9 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimaps;
-import com.sun.istack.internal.Nullable;
 import gzr.object.Person;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

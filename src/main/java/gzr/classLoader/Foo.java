@@ -4,7 +4,9 @@ package gzr.classLoader;
  * Created by gaozengrong on 16/12/19.
  */
 public class Foo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class<?> clazz = Class.forName("gzr.classLoader.Foo", true,  Foo.class.getClassLoader());
+
         try {
             new Bar(String.valueOf(1));
         } catch (Throwable t) {

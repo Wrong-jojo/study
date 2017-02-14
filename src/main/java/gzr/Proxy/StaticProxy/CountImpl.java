@@ -1,4 +1,4 @@
-package gzr.Proxy.Static;
+package gzr.Proxy.StaticProxy;
 
 /**
  * 委托类(包含业务逻辑)

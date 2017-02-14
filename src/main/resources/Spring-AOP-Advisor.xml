@@ -4,8 +4,8 @@
     http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
     <bean id="customerService" class="gzr.aop.CustomerService">
-        <property name="name" value="LeiOOLei" />
-        <property name="url" value="http://www.cnblogs.com/leiOOlei/" />
+        <property name="name" value="gaozengrong" />
+        <property name="url" value="https://github.com/MikeWrong/study/tree/testCreatBranch" />
     </bean>
 
     <bean id="hijackAroundMethodBean" class="gzr.aop.HijackAroundMethod" />
@@ -32,4 +32,5 @@
         </property>
         <property name="advice" ref="hijackAroundMethodBean" />
     </bean>
+
 </beans>
