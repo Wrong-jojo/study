@@ -19,14 +19,14 @@ public class Run {
         if (obj.isAnnotationPresent(ClassAnnotation.class)) {
 
             Annotation annotation = obj.getAnnotation(ClassAnnotation.class);
-            ClassAnnotation testerInfo = (ClassAnnotation) annotation;
+            ClassAnnotation classAnnotation = (ClassAnnotation) annotation;
 
-            System.out.printf("%nPriority :%s", testerInfo.priority());
-            System.out.printf("%nCreatedBy :%s", testerInfo.createdBy());
+            System.out.printf("%nPriority :%s", classAnnotation.priority());
+            System.out.printf("%nCreatedBy :%s", classAnnotation.createdBy());
             System.out.printf("%nTags :");
 
-            int tagLength = testerInfo.tags().length;
-            for (String tag : testerInfo.tags()) {
+            int tagLength = classAnnotation.tags().length;
+            for (String tag : classAnnotation.tags()) {
                 if (tagLength > 1) {
                     System.out.print(tag + ", ");
                 } else {
@@ -35,7 +35,7 @@ public class Run {
                 tagLength--;
             }
 
-            System.out.printf("%nLastModified :%s%n%n", testerInfo.lastModified());
+            System.out.printf("%nLastModified :%s%n%n", classAnnotation.lastModified());
 
         }
 
