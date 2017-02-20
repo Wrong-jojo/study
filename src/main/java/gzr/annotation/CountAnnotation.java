@@ -1,4 +1,4 @@
-package gzr.annotation.example;
+package gzr.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,8 +8,8 @@ import java.lang.annotation.Target;
 /**
  * Created by gaozengrong on 17/1/5.
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD) //can use in method only.
-public @interface Test {
-    boolean enabled() default true;
+@Target(ElementType.TYPE) //针对class、interface、enum的注解
+@Retention(RetentionPolicy.RUNTIME) //运行时获得
+public @interface CountAnnotation {
+    int count() default 1;
 }

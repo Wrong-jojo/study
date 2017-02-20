@@ -6,20 +6,20 @@ import java.lang.reflect.Method;
 /**
  * Created by gaozengrong on 17/1/5.
  */
-public class RunTest {
+public class Run {
     public static void main(String[] args) throws Exception {
 
         System.out.println("Testing...");
 
         int passed = 0, failed = 0, count = 0, ignore = 0;
 
-        Class<TestExample> obj = TestExample.class;
+        Class<Example> obj = Example.class;
 
         // Process @TesterInfo   isAnnotationPresent()判断注解类是不是当前类的注解
-        if (obj.isAnnotationPresent(TesterInfo.class)) {
+        if (obj.isAnnotationPresent(ClassAnnotation.class)) {
 
-            Annotation annotation = obj.getAnnotation(TesterInfo.class);
-            TesterInfo testerInfo = (TesterInfo) annotation;
+            Annotation annotation = obj.getAnnotation(ClassAnnotation.class);
+            ClassAnnotation testerInfo = (ClassAnnotation) annotation;
 
             System.out.printf("%nPriority :%s", testerInfo.priority());
             System.out.printf("%nCreatedBy :%s", testerInfo.createdBy());
@@ -43,10 +43,10 @@ public class RunTest {
         for (Method method : obj.getDeclaredMethods()) {
 
             // if method is annotated with @Test
-            if (method.isAnnotationPresent(Test.class)) {
+            if (method.isAnnotationPresent(MethodAnnotation.class)) {
 
-                Annotation annotation = method.getAnnotation(Test.class);
-                Test test = (Test) annotation;
+                Annotation annotation = method.getAnnotation(MethodAnnotation.class);
+                MethodAnnotation test = (MethodAnnotation) annotation;
 
                 // if enabled = true (default)
                 if (test.enabled()) {

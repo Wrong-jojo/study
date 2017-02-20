@@ -3,23 +3,23 @@ package gzr.annotation.example;
 /**
  * Created by gaozengrong on 17/1/5.
  */
-@TesterInfo(
-        priority = TesterInfo.Priority.HIGH,
+@ClassAnnotation(
+        priority = ClassAnnotation.Priority.HIGH,
         createdBy = "mkyong.com",
         tags = {"sales","test" }
 )
-class TestExample {
-    @Test
+class Example {
+    @MethodAnnotation
     void testA() {
         throw new RuntimeException("This test always failed");
     }
 
-    @Test(enabled = false)
+    @MethodAnnotation(enabled = false)
     void testB() {
         throw new RuntimeException("This test always passed");
     }
 
-    @Test(enabled = true)
+    @MethodAnnotation(enabled = true)
     void testC() {
         // do nothing, this test always passed.
     }
