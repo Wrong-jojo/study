@@ -19,7 +19,7 @@ public class Doge extends JFrame {
         setSize(d);
         w = d.width;
         h = d.height;
-        this.setBackground(new Color(0, 0, 0, 0));
+//        this.setBackground(new Color(0, 0, 0, 0));
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
