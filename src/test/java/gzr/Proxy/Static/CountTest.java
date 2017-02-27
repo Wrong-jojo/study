@@ -1,4 +1,4 @@
-package gzr.Proxy.StaticProxy;
+package gzr.Proxy.Static;
 
 import org.junit.Test;
 
