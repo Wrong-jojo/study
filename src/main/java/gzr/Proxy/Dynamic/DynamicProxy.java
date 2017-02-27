@@ -18,7 +18,7 @@ public class DynamicProxy implements InvocationHandler{
         /**
          Proxy.newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h)做了以下几件事.
         （1）根据参数loader和interfaces调用方法 getProxyClass(loader, interfaces)创建代理类$Proxy0.$Proxy0类 实现了interfaces的接口,并继承了Proxy类.
-        （2）实例化$Proxy0并在构造方法中把DynamicSubject传过去,接着$Proxy0调用父类Proxy的构造器,为h赋值,如下：
+        （2）实例化$Proxy0并在构造方法中把DynamicProxy传过去,接着$Proxy0调用父类Proxy的构造器,为h赋值,如下：
          */
     }
     /**
