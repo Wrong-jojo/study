@@ -31,7 +31,7 @@ class Bar {
     private static String BAR_ID = getBarID();
 
     public Bar(String id) {
-        this.BAR_ID = id;
+        BAR_ID = id;
     }
 
     private static String getBarID() {

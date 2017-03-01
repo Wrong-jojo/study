@@ -285,6 +285,7 @@ class Tetrisblok extends JPanel implements KeyListener {
     }
 
     // 键盘监听
+    @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_DOWN:
@@ -304,6 +305,7 @@ class Tetrisblok extends JPanel implements KeyListener {
     }
 
     // 无用
+    @Override
     public void keyReleased(KeyEvent e) {
     }
 

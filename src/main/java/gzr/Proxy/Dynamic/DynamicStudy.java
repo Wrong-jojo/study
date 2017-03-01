@@ -53,11 +53,11 @@ public class DynamicStudy {
     private static void printClassDefinition(Class clz){
 
         String clzModifier = getModifier(clz.getModifiers());
-        if(clzModifier!=null && !clzModifier.equals("")){
+        if(clzModifier!=null && !"".equals(clzModifier)){
             clzModifier = clzModifier + " ";
         }
         String superClz = clz.getSuperclass().getName();
-        if(superClz!=null && !superClz.equals("")){
+        if(superClz!=null && !"".equals(superClz)){
             superClz = "extends " + superClz;
         }
 
@@ -78,7 +78,7 @@ public class DynamicStudy {
         Field[] fields = clz.getDeclaredFields();   //这里获得的field(属性,不包括方法)为com.sun.proxy.$Proxy0 的所有private public protect方法
         for (Field field : fields) {
             String modifier = getModifier(field.getModifiers());
-            if (modifier != null && !modifier.equals("")) {
+            if (modifier != null && !"".equals(modifier)) {
                 modifier = modifier + " ";
             }
             String fieldName = field.getName();
@@ -91,7 +91,7 @@ public class DynamicStudy {
         Method[] methods = clz.getDeclaredMethods();
         for (Method method : methods) {
             String modifier = getModifier(method.getModifiers());
-            if (modifier != null && !modifier.equals("")) {
+            if (modifier != null && !"".equals(modifier)) {
                 modifier = modifier + " ";
             }
 

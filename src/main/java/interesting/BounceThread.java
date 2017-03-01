@@ -9,6 +9,7 @@ import java.awt.event.WindowEvent;
 
 /**
  * 跳动的小球
+ * @author zengrong.gzr
  */
 public class BounceThread {
     public static void main(String[] args) {
@@ -18,10 +19,11 @@ public class BounceThread {
 }
 
 class BounceThreadFrame extends JFrame {
-    public BounceThreadFrame() {
+    BounceThreadFrame() {
         setSize(300, 200);
         setTitle("Bounce");
         addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
@@ -32,6 +34,7 @@ class BounceThreadFrame extends JFrame {
         JPanel p = new JPanel();
         addButton(p, "Start",
                 new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent evt) {
                         Ball b = new Ball(canvas);
                         b.start();
@@ -39,6 +42,7 @@ class BounceThreadFrame extends JFrame {
                 });
         addButton(p, "Close",
                 new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent evt) {
                         canvas.setVisible(false);
                         System.exit(0);
@@ -47,8 +51,8 @@ class BounceThreadFrame extends JFrame {
         contentPane.add(p, "South");
     }
 
-    public void addButton(Container c, String title,
-                          ActionListener a) {
+    private void addButton(Container c, String title,
+                           ActionListener a) {
         JButton b = new JButton(title);
         c.add(b);
         b.addActionListener(a);
@@ -58,18 +62,20 @@ class BounceThreadFrame extends JFrame {
 }
 
 class Ball extends Thread {
-    public Ball(JPanel b) {
+    Ball(JPanel b) {
         box = b;
     }
 
-    public void draw() {
+    private void draw() {
         Graphics g = box.getGraphics();
         g.fillOval(x, y, XSIZE, YSIZE);
         g.dispose();
     }
 
-    public void move() {
-        if (!box.isVisible()) return;
+    private void move() {
+        if (!box.isVisible()) {
+            return;
+        }
         Graphics g = box.getGraphics();
         g.setXORMode(box.getBackground());
         g.fillOval(x, y, XSIZE, YSIZE);
@@ -96,6 +102,7 @@ class Ball extends Thread {
         g.dispose();
     }
 
+    @Override
     public void run() {
         try {
             draw();
@@ -103,7 +110,7 @@ class Ball extends Thread {
                 move();
                 sleep(5);
             }
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
     }
 
