@@ -1,4 +1,4 @@
-package gzr.Proxy.Dynamic;
+package gzr.proxy.dynamic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

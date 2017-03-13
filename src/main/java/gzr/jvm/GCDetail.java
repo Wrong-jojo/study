@@ -1,4 +1,4 @@
-package gzr.JVM;
+package gzr.jvm;
 
 /**
   -Xms60m

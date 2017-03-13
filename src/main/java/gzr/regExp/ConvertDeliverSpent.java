@@ -1,4 +1,4 @@
-package gzr.RegExp;
+package gzr.regExp;
 
 import java.util.regex.Pattern;
 

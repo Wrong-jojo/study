@@ -1,4 +1,4 @@
-package gzr.Proxy.Static;
+package gzr.proxy.staticproxy;
 
 /**
  * 这是一个代理类（增强CountImpl实现类）

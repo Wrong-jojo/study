@@ -1,4 +1,4 @@
-package gzr.Proxy.Cglib;
+package gzr.proxy.cglib;
 
 import org.junit.Test;
 

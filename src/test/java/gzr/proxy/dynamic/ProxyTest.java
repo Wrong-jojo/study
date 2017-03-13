@@ -1,7 +1,7 @@
-package gzr.Proxy.Dynamic;
+package gzr.proxy.dynamic;
 
-import gzr.Proxy.Static.Count;
-import gzr.Proxy.Static.CountImpl;
+import gzr.proxy.staticproxy.Count;
+import gzr.proxy.staticproxy.CountImpl;
 import org.junit.Test;
 
 /**

@@ -1,4 +1,4 @@
-package gzr.List;
+package gzr.list;
 
 import java.util.ArrayList;
 import java.util.Arrays;

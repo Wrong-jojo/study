@@ -1,4 +1,4 @@
-package gzr.Proxy.Dynamic;
+package gzr.proxy.dynamic;
 
 /**
  * 转载自 http://blog.csdn.net/mdcmy/article/details/8543971

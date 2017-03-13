@@ -1,4 +1,4 @@
-package gzr.Proxy.Static;
+package gzr.proxy.staticproxy;
 
 /**
  * 定义一个账户接口 转载自 http://blog.csdn.net/mdcmy/article/details/8543971

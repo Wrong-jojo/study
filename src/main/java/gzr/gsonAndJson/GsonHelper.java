@@ -1,4 +1,4 @@
-package gzr.GsonAndJson;
+package gzr.gsonAndJson;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

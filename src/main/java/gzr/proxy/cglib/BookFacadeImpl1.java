@@ -1,4 +1,4 @@
-package gzr.Proxy.Cglib;
+package gzr.proxy.cglib;
 
 /**
  * 这个是没有实现接口的实现类

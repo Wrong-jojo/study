@@ -1,4 +1,4 @@
-package gzr.Proxy.Dynamic;
+package gzr.proxy.dynamic;
 
 /**
  * Created by gaozengrong on 16/11/28.
