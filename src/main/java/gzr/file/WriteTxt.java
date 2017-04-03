@@ -1,4 +1,4 @@
-package gzr.txt;
+package gzr.file;
 
 import java.io.File;
 import java.io.FileWriter;

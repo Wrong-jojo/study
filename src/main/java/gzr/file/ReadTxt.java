@@ -1,4 +1,4 @@
-package gzr.txt;
+package gzr.file;
 
 import com.google.common.base.Splitter;
 
