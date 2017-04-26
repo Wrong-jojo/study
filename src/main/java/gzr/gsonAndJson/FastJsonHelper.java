@@ -14,5 +14,6 @@ public class FastJsonHelper {
         girl.setSex("female");
         //输出 {"name":"Mary","sex":"female"}   只会输出getter方法对应的字段
         System.out.println(JSON.toJSONString(girl));
+        System.out.println(girl);
     }
 }

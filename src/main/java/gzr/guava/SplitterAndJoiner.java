@@ -1,10 +1,10 @@
 package gzr.guava;
 
-import com.google.common.base.Joiner;
-import com.google.common.base.Splitter;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
 
 /**
  * 将List转换为逗号分隔符

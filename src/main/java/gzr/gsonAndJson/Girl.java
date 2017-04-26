@@ -1,5 +1,7 @@
 package gzr.gsonAndJson;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 /**
  * @author zengrong.gzr
  * @date 2017/04/06
@@ -34,5 +36,10 @@ public class Girl {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString(){
+        return ToStringBuilder.reflectionToString(this);
     }
 }
