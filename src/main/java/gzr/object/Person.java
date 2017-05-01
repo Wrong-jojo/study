@@ -1,8 +1,8 @@
 package gzr.object;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import java.io.Serializable;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * Created by gaozengrong on 16/11/22.
@@ -18,6 +18,14 @@ public class Person implements Serializable {
 
     private String sex;
 
+    public Person(int age, String name, String sex) {
+        this.age = age;
+        this.name = name;
+        this.sex = sex;
+    }
+
+    public Person() {
+    }
 
     public int getAge() {
         return age;
