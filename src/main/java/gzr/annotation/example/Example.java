@@ -5,7 +5,7 @@ package gzr.annotation.example;
  */
 @ClassAnnotation(
         priority = ClassAnnotation.Priority.HIGH,
-        createdBy = "mkyong.com",
+        createdBy = "gzr",
         tags = {"sales","test" }
 )
 class Example {

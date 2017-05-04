@@ -19,7 +19,7 @@ public @interface ClassAnnotation {
 
     String[] tags() default "";
 
-    String createdBy() default "Mkyong";
+    String createdBy() default "gzr";
 
     String lastModified() default "05/01/2017";
 }

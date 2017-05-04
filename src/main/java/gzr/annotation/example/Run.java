@@ -13,14 +13,11 @@ public class Run {
 
         int passed = 0, failed = 0, count = 0, ignore = 0;
 
-        Class<Example> obj = Example.class;
+        Class<?> obj = Example.class;
 
         // Process @TesterInfo   isAnnotationPresent()判断注解类是不是当前类的注解
         if (obj.isAnnotationPresent(ClassAnnotation.class)) {
-
-            Annotation annotation = obj.getAnnotation(ClassAnnotation.class);
-            ClassAnnotation classAnnotation = (ClassAnnotation) annotation;
-
+            ClassAnnotation classAnnotation = obj.getAnnotation(ClassAnnotation.class);
             System.out.printf("%nPriority :%s", classAnnotation.priority());
             System.out.printf("%nCreatedBy :%s", classAnnotation.createdBy());
             System.out.printf("%nTags :");
