@@ -25,7 +25,6 @@ public class SplitterAndJoiner {
         listToString();
         endTime = System.currentTimeMillis();
         System.out.println("ListToString()函数运行时间： " + (endTime - startTime) + "ms");
-        startTime = System.currentTimeMillis();
 
         startTime = System.currentTimeMillis();
         stringToMap();
