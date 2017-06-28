@@ -1,16 +1,18 @@
 package gzr.guava;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Nullable;
+
 import com.alibaba.fastjson.JSONObject;
+
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimaps;
 import gzr.object.Person;
-
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by gaozengrong on 16/11/22.
@@ -42,12 +44,9 @@ public class MultiMap {
         System.out.println(JSONObject.toJSON(multiMap.get(1))); //输出[{"name":"123","age":1},{"name":"345","age":1}]
 
         //测试 Maps.uniqueIndex是不允许存在重复的元素的
-        Map<Integer, Person> uniqueMap = Maps.uniqueIndex(list, new Function<Person, Integer>() {
-            @Override
-            public Integer apply(Person input) {
-                assert input != null;
-                return input.getAge();
-            }
+        Map<Integer, Person> uniqueMap = Maps.uniqueIndex(list, input -> {
+            assert input != null;
+            return input.getAge();
         });  //会抛出异常 java.lang.IllegalArgumentException: Multiple entries with same key
     }
 }

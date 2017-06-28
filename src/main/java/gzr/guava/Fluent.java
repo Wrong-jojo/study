@@ -20,6 +20,7 @@ public class Fluent {
     private  static List<Long> convertStringListToLongList(String para){
         List<String> list = Splitter.on(',').splitToList(para.trim());
         return FluentIterable.from(list).transform(new Function<String, Long>() {
+            @Override
             public Long apply(String input) {
                 if (StringUtils.isBlank(input)){
                     // ""和null都进行过滤
