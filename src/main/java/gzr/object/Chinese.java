@@ -1,5 +1,7 @@
 package gzr.object;
 
+import org.springframework.beans.BeanUtils;
+
 /**
  * Created by gaozengrong on 16/11/29.
  */
@@ -17,9 +19,16 @@ public class Chinese extends Person{
         this.city = city;
     }
 
-    private Chinese(Chinese chinese){
-        this.province = chinese.getProvince();
-        this.city = chinese.getCity();
+    /**
+     * 传入父对象 调用BeanUtils.copyProperties进行拷贝
+     * @param person
+     */
+    public Chinese(Person person) {
+        BeanUtils.copyProperties(person,this);
+    }
+
+    public Chinese() {
+
     }
 
     public String getProvince() {

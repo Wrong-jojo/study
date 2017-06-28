@@ -56,4 +56,5 @@ public class Person implements Serializable {
         return ToStringBuilder.reflectionToString(this);
         //        return String.valueOf(age) +"|" + String.valueOf(name) + "|" + String.valueOf(sex);
     }
+    
 }
