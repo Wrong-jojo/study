@@ -6,6 +6,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import com.google.common.collect.Lists;
 
@@ -36,7 +37,7 @@ public class Partition {
             });
         });
 
-        Thread.sleep(1000);
+        TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("print concurrent result");
         partitions.forEach(partition -> {
             try {
