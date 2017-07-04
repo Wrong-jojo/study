@@ -32,6 +32,7 @@ public class Completion {
         TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("print concurrent result");
         for (int i = 0; i < threadNum; i++) {
+            //如果阻塞队列中有已完成的任务, take方法就返回任务的结果, 否则阻塞等待任务完成
             System.out.println(cs.take().get());
         }
 
