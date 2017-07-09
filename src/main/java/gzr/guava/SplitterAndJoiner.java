@@ -27,7 +27,7 @@ public class SplitterAndJoiner {
         System.out.println("ListToString()函数运行时间： " + (endTime - startTime) + "ms");
 
         startTime = System.currentTimeMillis();
-        stringToMap();
+        System.out.println(stringToMap("name=gaozengrong,age=26,height=178", ",", "="));
         endTime = System.currentTimeMillis();
         System.out.println("stringToMap()函数运行时间： " + (endTime - startTime) + "ms");
     }
@@ -53,4 +53,27 @@ public class SplitterAndJoiner {
         System.out.println(map);
     }
 
+    /**
+     * String转换为Map
+     *
+     * @param s
+     * @param separator
+     * @param kvSeparator
+     * @return
+     */
+    private static Map stringToMap(String s, String separator, String kvSeparator) {
+        return Splitter.on(separator).withKeyValueSeparator(kvSeparator).split(s);
+    }
+
+    /**
+     * Map转换为String
+     *
+     * @param map
+     * @param separator
+     * @param kvSeparator
+     * @return
+     */
+    public static String MapToString(Map map, String separator, String kvSeparator) {
+        return Joiner.on(separator).withKeyValueSeparator(kvSeparator).useForNull("").join(map);
+    }
 }
