@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
 /**
@@ -24,13 +25,14 @@ public class FastJsonHelper {
         System.out.println("copy girl: " + copyGirl);
 
         whenKeyIsNum();
+        antiAnalysisToMap();
     }
 
     /**
      * 当key为数字时,json序列化后出错
      * https://github.com/alibaba/fastjson/issues/66
      */
-    public static void whenKeyIsNum(){
+    public static void whenKeyIsNum() {
         Map<Integer, String> map = new HashMap<Integer, String>();
         map.put(1512, "手机");
         map.put(1101, "笔记本电脑");
@@ -38,6 +40,15 @@ public class FastJsonHelper {
         System.out.println(JSON.toJSONString((map), SerializerFeature.QuoteFieldNames));
         //输出  {"1512":"手机","1101":"笔记本电脑"}
         System.out.println(JSON.toJSONString((map), SerializerFeature.WriteNonStringKeyAsString));
+    }
 
+    /**
+     * 反解析到 Map<String, Object> 这种数据结构
+     */
+    public static void antiAnalysisToMap() {
+        String s = "{\"1512\":\"手机\",\"1101\":\"笔记本电脑\"}";
+        Map<Long, String> map = JSON.parseObject(s, new TypeReference<Map<Long, String>>() {});
+        //输出  {1512=手机, 1101=笔记本电脑}
+        System.out.println(map);
     }
 }
