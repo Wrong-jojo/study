@@ -40,6 +40,7 @@ public class MyThreadExecutors {
 
     //超过timeout时间的任务会被干掉
     private MyThreadExecutors() {
+        //corePoolSize必须小于等于maximumPoolSize
         threadPoolExecutor = new ThreadPoolExecutor(10, 100, 100000L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<Runnable>(1000), new ThreadPoolExecutor.DiscardPolicy());
     }
 

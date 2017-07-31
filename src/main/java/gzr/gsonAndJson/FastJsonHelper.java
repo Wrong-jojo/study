@@ -7,6 +7,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
+import gzr.object.Person;
+
 /**
  * @author zengrong.gzr
  * @date 2017/04/06
@@ -26,6 +28,7 @@ public class FastJsonHelper {
 
         whenKeyIsNum();
         antiAnalysisToMap();
+        disableCircularReference();
     }
 
     /**
@@ -48,6 +51,18 @@ public class FastJsonHelper {
     public static void antiAnalysisToMap() {
         String s = "{\"1512\":\"手机\",\"1101\":\"笔记本电脑\"}";
         Map<Long, String> map = JSON.parseObject(s, new TypeReference<Map<Long, String>>() {});
+        //输出  {1=gzr.object.Person@1175e2db[age=20,name=gao,sex=male], 2=gzr.object.Person@1175e2db[age=20,name=gao,sex=male]}
+        System.out.println(JSON.toJSONString((map),SerializerFeature.DisableCircularReferenceDetect));
+    }
+
+    /**
+     * 消除循环引用
+     */
+    public static void disableCircularReference() {
+        Person person = new Person(20, "gao", "male");
+        Map<Long, Person> map = new HashMap<>();
+        map.put(1L,person);
+        map.put(2L,person);
         //输出  {1512=手机, 1101=笔记本电脑}
         System.out.println(map);
     }
