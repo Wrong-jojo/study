@@ -51,8 +51,8 @@ public class FastJsonHelper {
     public static void antiAnalysisToMap() {
         String s = "{\"1512\":\"手机\",\"1101\":\"笔记本电脑\"}";
         Map<Long, String> map = JSON.parseObject(s, new TypeReference<Map<Long, String>>() {});
-        //输出  {1=gzr.object.Person@1175e2db[age=20,name=gao,sex=male], 2=gzr.object.Person@1175e2db[age=20,name=gao,sex=male]}
-        System.out.println(JSON.toJSONString((map),SerializerFeature.DisableCircularReferenceDetect));
+        //输出  {1512:"手机",1101:"笔记本电脑"}
+        System.out.println(JSON.toJSONString((map)));
     }
 
     /**
@@ -63,7 +63,9 @@ public class FastJsonHelper {
         Map<Long, Person> map = new HashMap<>();
         map.put(1L,person);
         map.put(2L,person);
-        //输出  {1512=手机, 1101=笔记本电脑}
-        System.out.println(map);
+        //输出  {1:{"age":20,"name":"gao","sex":"male"},2:{"age":20,"name":"gao","sex":"male"}}
+        System.out.println(JSON.toJSONString((map),SerializerFeature.DisableCircularReferenceDetect));
+        //输出  {1:{"age":20,"name":"gao","sex":"male"},2:{"$ref":"$.1"}}
+        System.out.println(JSON.toJSONString((map)));
     }
 }
