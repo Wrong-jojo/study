@@ -18,7 +18,6 @@ import org.apache.commons.lang3.StringUtils;
 public class ArrayAndList {
     public static void main(String[] args) {
         String str = "123,456,789,123,456, , ";
-        String[] array = str.split(",");
         List<Object> list = stringToList(str, ",");
         System.out.println(list);
         System.out.println(listToString(list, "|"));

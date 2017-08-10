@@ -50,7 +50,7 @@ public class FastJsonHelper {
      */
     public static void antiAnalysisToMap() {
         String s = "{\"1512\":\"手机\",\"1101\":\"笔记本电脑\"}";
-        Map<Long, String> map = JSON.parseObject(s, new TypeReference<Map<Long, String>>() {});
+        Map<String, String> map = JSON.parseObject(s, new TypeReference<Map<String, String>>() {});
         //输出  {1512:"手机",1101:"笔记本电脑"}
         System.out.println(JSON.toJSONString((map)));
     }

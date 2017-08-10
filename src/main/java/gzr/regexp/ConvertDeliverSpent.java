@@ -16,9 +16,9 @@ public class ConvertDeliverSpent {
         String regEx="[^0-9]";
         Pattern p = Pattern.compile(regEx);
         String num = p.matcher(param).replaceAll("").trim();
-        Long delivertime = Long.parseLong(num);
-        int hour = (int) (delivertime/60);
-        int minute = (int) (delivertime%60);
+        Long deliverTime = Long.parseLong(num);
+        int hour = (int) (deliverTime/60);
+        int minute = (int) (deliverTime%60);
         if (hour == 0){
             return minute+"分钟送达";
         }else {
