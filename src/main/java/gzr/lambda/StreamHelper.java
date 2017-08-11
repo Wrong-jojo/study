@@ -3,7 +3,7 @@ package gzr.lambda;
 import java.util.stream.Stream;
 
 /**
- * 常用方法
+ * stream常用方法
  *
  * @author zengrong.gzr
  * @date 2017/08/11
