@@ -16,6 +16,7 @@ import gzr.object.Person;
 public class FastJsonHelper {
     public static void main(String[] args) {
         Girl girl = new Girl();
+        System.out.println(JsonUninitializedObject(girl));
         girl.setAge(18);
         girl.setName("Mary");
         girl.setSex("female");
@@ -61,11 +62,25 @@ public class FastJsonHelper {
     public static void disableCircularReference() {
         Person person = new Person(20, "gao", "male");
         Map<Long, Person> map = new HashMap<>();
-        map.put(1L,person);
-        map.put(2L,person);
+        map.put(1L, person);
+        map.put(2L, person);
         //输出  {1:{"age":20,"name":"gao","sex":"male"},2:{"age":20,"name":"gao","sex":"male"}}
-        System.out.println(JSON.toJSONString((map),SerializerFeature.DisableCircularReferenceDetect));
+        System.out.println(JSON.toJSONString((map), SerializerFeature.DisableCircularReferenceDetect));
         //输出  {1:{"age":20,"name":"gao","sex":"male"},2:{"$ref":"$.1"}}
         System.out.println(JSON.toJSONString((map)));
+    }
+
+    /**
+     * json化未初始化的对象
+     *
+     * @param o
+     * @return
+     */
+    public static String JsonUninitializedObject(Object o) {
+        return JSON.toJSONString(o,
+            SerializerFeature.WriteNullBooleanAsFalse,
+            SerializerFeature.WriteNullStringAsEmpty,
+            SerializerFeature.WriteNullListAsEmpty,
+            SerializerFeature.WriteNullNumberAsZero);
     }
 }
