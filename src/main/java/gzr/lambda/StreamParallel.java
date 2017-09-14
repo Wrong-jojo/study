@@ -26,14 +26,22 @@ public class StreamParallel {
         String name = properties.stream()
             .sorted(Comparator.comparingInt(ShopProperty::getDistance))
             .findFirst()
-            .orElseThrow(() -> new Exception("can't find the nearest shop.")).getName();
+            .orElseThrow(() -> new Exception("can't find the nearest shop."))
+            .getName();
         System.out.println("距离我最近的店铺是:" + name);
+
+        //找出最近的距离
+        Integer minDistance = properties.stream()
+            .min(Comparator.comparing(ShopProperty::getDistance))
+            .orElseThrow(() -> new Exception("can't find the min distance."))
+            .getDistance();
+        System.out.println("距离我最近店铺的距离是:" + minDistance + "米");
 
         //找出所有销量大于1000的店铺 并计算出店铺个数
         long count = properties.stream()
             .filter(p -> p.getSales() > 1000)
             .count();
-
+        System.out.println("距离我最近的店铺是:" + name);
 
         //调用parallelStream并行处理
         List<String> names = properties.parallelStream()
