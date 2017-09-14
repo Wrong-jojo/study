@@ -3,6 +3,7 @@ package gzr.guava;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
@@ -34,7 +35,7 @@ public class SplitterAndJoiner {
 
     private static void stringToList() {
         String str = "a, b, c";
-        List<String> result = Splitter.on(",").trimResults().splitToList(str);
+        List<String> result = Splitter.on(Pattern.compile(",|;")).trimResults().splitToList(str);
         System.out.println(result); //输出[a, b, c]
     }
 
