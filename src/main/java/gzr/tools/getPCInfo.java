@@ -22,5 +22,6 @@ public class getPCInfo {
         System.out.println(map.get("USER"));
 
         System.out.println(InetAddress.getLocalHost().getHostAddress()); //获取本机ip
+        System.out.println(Runtime.getRuntime().availableProcessors());  //当前机器cpu核数
     }
 }
