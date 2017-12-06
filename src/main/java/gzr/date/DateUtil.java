@@ -7,11 +7,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+
 /**
  * Created by gaozengrong on 16/11/22.
  */
 public class DateUtil {
     public static void main(String[] args) {
+        System.out.println(TimeUnit.MILLISECONDS.toDays(1510416999000L - 1510329600000L));
+
         //获取第二天24点的时间
         System.out.println("第二天0点的时间为：" + getTomorrow24());
         Date now = new Date();
@@ -20,6 +25,18 @@ public class DateUtil {
         Date startTime = new Date();
         Date endTime = new Date(startTime.getTime() + 20 * 60 * 60 * 1000);
         System.out.println("在" + startTime + "和" + endTime + "区间内的整点时间有：" + getWholePointInInterval(startTime, endTime));
+    }
+
+    /**
+     * 将日期字符串转换成date类型
+     *
+     * @param dateStr
+     * @param format
+     * @return
+     */
+    public static Date formatDateStr(String dateStr, String format) {
+        //DateTime.parse("2017-11-11 11:11:11", DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")).toDate()
+        return DateTime.parse(dateStr, DateTimeFormat.forPattern(dateStr)).toDate();
     }
 
     /**
@@ -107,7 +124,8 @@ public class DateUtil {
      * @return
      */
     private static Boolean compareTwoTime2(Date before, Date after) {
-        return after.getTime() - before.getTime() > TimeUnit.DAYS.toMillis(1);
+        return TimeUnit.MILLISECONDS.toDays(after.getTime() - before.getTime()) > 1L;
+        //return after.getTime() - before.getTime() > TimeUnit.DAYS.toMillis(1);
     }
 
 }
