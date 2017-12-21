@@ -40,6 +40,13 @@ public class DateUtil {
     }
 
     /**
+     * 获取当天的年月日
+     */
+    public static String getTodayYMD() {
+        return DateTime.now().toString("yyyyMMdd");
+    }
+
+    /**
      * //获取第二天24点的时间
      *
      * @return
