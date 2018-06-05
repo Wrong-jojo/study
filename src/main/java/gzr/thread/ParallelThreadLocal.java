@@ -17,8 +17,8 @@ public class ParallelThreadLocal {
     }
 
     private static class ThreadContext {
-        //private static ThreadLocal<String> val = ThreadLocal.withInitial(() -> "empty");
-        private static InheritableThreadLocal<String> val = new InheritableThreadLocal<>();
+        private static ThreadLocal<String> val = ThreadLocal.withInitial(() -> "empty");
+        //private static InheritableThreadLocal<String> val = new InheritableThreadLocal<>();
 
         public ThreadContext() {
         }
