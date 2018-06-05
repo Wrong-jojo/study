@@ -10,7 +10,7 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote{
 
-    // UnicastRemoteobject 实现了某些"远程功能"。其构造方法抛出了RemoteException异常
+    // UnicastRemoteObject 实现了某些"远程功能"。其构造方法抛出了RemoteException异常
     protected MyRemoteImpl() throws RemoteException{
     }
 

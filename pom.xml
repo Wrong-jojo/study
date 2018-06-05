@@ -43,7 +43,7 @@
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
-            <version>2.2.2</version>
+            <version>3.2.4</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -105,6 +105,11 @@
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
             <version>2.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>0.9.0</version>
         </dependency>
     </dependencies>
 
