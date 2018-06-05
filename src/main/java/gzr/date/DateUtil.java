@@ -16,6 +16,7 @@ import org.joda.time.format.DateTimeFormat;
 public class DateUtil {
     public static void main(String[] args) {
         System.out.println(TimeUnit.MILLISECONDS.toDays(1510416999000L - 1510329600000L));
+        System.out.println(dateToStr());
 
         //获取第二天24点的时间
         System.out.println("第二天0点的时间为：" + getTomorrow24());
@@ -40,6 +41,15 @@ public class DateUtil {
     }
 
     /**
+     * 将日期转换成format String
+     *
+     * @return
+     */
+    public static String dateToStr() {
+        return DateTime.now().toString("yyyyMMddHHmmssSSS");
+    }
+
+    /**
      * 获取当天的年月日
      */
     public static String getTodayYMD() {
@@ -47,7 +57,7 @@ public class DateUtil {
     }
 
     /**
-     * //获取第二天24点的时间
+     * 获取第二天24点的时间
      *
      * @return
      */
