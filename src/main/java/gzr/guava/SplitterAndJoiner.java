@@ -1,12 +1,12 @@
 package gzr.guava;
 
+import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
-
-import com.google.common.base.Joiner;
-import com.google.common.base.Splitter;
 
 /**
  * 将List转换为逗号分隔符
@@ -48,7 +48,7 @@ public class SplitterAndJoiner {
         System.out.println(str);  //输出a,b,c
     }
 
-    private static void stringToMap() {
+    public static void stringToMap() {
         String s = "name=gaozengrong,age=26,height=178";
         Map<String, String> map = Splitter.on(',').withKeyValueSeparator('=').split(s);
         System.out.println(map);
@@ -62,7 +62,7 @@ public class SplitterAndJoiner {
      * @param kvSeparator
      * @return
      */
-    private static Map stringToMap(String s, String separator, String kvSeparator) {
+    public static Map stringToMap(String s, String separator, String kvSeparator) {
         return Splitter.on(separator).withKeyValueSeparator(kvSeparator).split(s);
     }
 

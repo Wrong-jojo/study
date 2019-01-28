@@ -1,11 +1,11 @@
 package gzr.collection;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.StringTokenizer;
-
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author zengrong.gzr
@@ -72,5 +72,23 @@ public class MapExecute {
             }
         }
         return map;
+    }
+
+    public static boolean mapsAreEqual(Map<String, String> mapA, Map<String, String> mapB) {
+        try {
+            for (String k : mapB.keySet()) {
+                if (!mapA.get(k).equals(mapB.get(k))) {
+                    return false;
+                }
+            }
+            for (String y : mapA.keySet()) {
+                if (!mapB.containsKey(y)) {
+                    return false;
+                }
+            }
+        } catch (NullPointerException np) {
+            return false;
+        }
+        return true;
     }
 }
